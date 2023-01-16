@@ -1,15 +1,17 @@
 INSTANCE_NAME="instance-1"
 REGION=us-central1
 ZONE=us-central1-c
-PROJECT_NAME="YOUR_PROJECT_NAME_HERE"
+PROJECT_NAME="steel-shine-374019"
 IP_NAME="$PROJECT_NAME-ip"
-GOOGLE_ACCOUNT_NAME="YOUR_ACCOUNT_NAME_HERE" # without the @post.bgu.ac.il or @gmail.com part
+GOOGLE_ACCOUNT_NAME="amitisr" # without the @post.bgu.ac.il or @gmail.com part
 
-# 0. Install Cloud SDK on your local machine or using Could Shell
+
+# 0. Install Cloud SDK on your local machine or gcloud components list
 # check that you have a proper active account listed
-gcloud auth list 
+gcloud auth list
 # check that the right project and zone are active
 gcloud config list
+
 # if not set them
 # gcloud config set project $PROJECT_NAME
 # gcloud config set compute/zone $ZONE
@@ -19,7 +21,7 @@ gcloud compute addresses create $IP_NAME --project=$PROJECT_NAME --region=$REGIO
 gcloud compute addresses list
 # note the IP address printed above, that's your extrenal IP address.
 # Enter it here: 
-INSTANCE_IP=""
+INSTANCE_IP="34.133.161.162"
 
 # 2. Create Firewall rule to allow traffic to port 8080 on the instance
 gcloud compute firewall-rules create default-allow-http-8080 \
